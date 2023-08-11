@@ -52,4 +52,64 @@
     clip-path: polygon(26% 0, 31% 5%, 61% 5%, 66% 0, 92% 0, 100% 8%, 100% 89%, 91% 100%, 7% 100%, 0 92%, 0 0);
     animation: backglitch 50ms linear infinite;
   }
+
+  .input-dist {
+    z-index: 80;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding-inline: 1em;
+    padding-block: 1.2em;
+    grid-template-columns: 1fr;
+  }
+  
+  .input-type {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1em;
+    font-size: 1.1rem;
+    background-color: transparent;
+    width: 100%;
+    border: none;
+  }
+  
+  .input-is {
+    color: #fff;
+    font-size: 0.9rem;
+    background-color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    padding-inline: 0.5em;
+    padding-block: 0.7em;
+    border: none;
+    transition: all 1s ease-in-out;
+    border-bottom: 1px solid hsl(221, 26%, 43%);
+  }
+  
+  .input-is:hover {
+    transition: all 1s ease-in-out;
+    background: linear-gradient(90deg, transparent 0%, rgba(102, 224, 255, 0.2) 27%, rgba(102, 224, 255, 0.2) 63%, transparent 100%);
+  }
+  
+  .input-content:focus-within::before {
+    transition: all 1s ease-in-out;
+    background: hsla(0, 0%, 100%, 0.814);
+  }
+  
+  .input-is:focus {
+    outline: none;
+    border-bottom: 1px solid hsl(192, 100%, 100%);
+    color: hsl(192, 100%, 88%);
+    background: linear-gradient(90deg, transparent 0%, rgba(102, 224, 255, 0.2) 27%, rgba(102, 224, 255, 0.2) 63%, transparent 100%);
+  }
+  
+  .input-is::-moz-placeholder {
+    color: hsla(192, 100%, 88%, 0.806);
+  }
+  
+  .input-is::placeholder {
+    color: hsla(192, 100%, 88%, 0.806);
+  }
   
